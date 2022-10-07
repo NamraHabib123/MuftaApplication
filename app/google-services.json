@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "981873387709",
+    "project_id": "muftaapplication",
+    "storage_bucket": "muftaapplication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981873387709:android:3a717f299ecabd382d2fd4",
+        "android_client_info": {
+          "package_name": "com.example.muftaapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981873387709-cbvg57ktce0m57dvrc7cs95lb9lovkln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVJaj-F3OzUG4kaibFsNa5ZR0-wbtbKuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981873387709-cbvg57ktce0m57dvrc7cs95lb9lovkln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

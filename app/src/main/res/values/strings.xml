@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">MuftaApplication</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <array name="cityspinner">
+
+        <item>Abbottabad</item>
+        <item>Attock</item>
+        <item>Ayubia</item>
+        <item>Bahawalpur</item>
+        <item>Chitral</item>
+        <item>Dadu</item>
+        <item>Dera Ghazi Khan</item>
+        <item>Dera Ismail Khan</item>
+        <item>Daska</item>
+        <item>Faisalabad</item>
+        <item>Gwadar</item>
+        <item>Gujranwala</item>
+        <item>Gujrat</item>
+        <item>Hyderabad</item>
+        <item>Hafizabad</item>
+        <item>Hameedabad</item>
+        <item>Islamabad</item>
+        <item>Islamkot</item>
+        <item>Jacobabad</item>
+        <item>Jhelum</item>
+        <item>Karachi</item>
+        <item>Kotri</item>
+        <item>Kasur</item>
+        <item>Katuri</item>
+        <item>Kohistan</item>
+        <item>Lahore</item>
+        <item>Larkana</item>
+        <item>Multan</item>
+        <item>Mansehra</item>
+        <item>Mardan</item>
+        <item>Malakand</item>
+        <item>Mianwali</item>
+        <item>Muzaffar Garh</item>
+        <item>Muzaffarabad</item>
+        <item>Nawabshah</item>
+        <item>Nazimabad</item>
+        <item>Nowshera</item>
+        <item>Okara</item>
+        <item>Peshawar</item>
+        <item>Quetta</item>
+        <item>Rawalpindi</item>
+        <item>Sialkot</item>
+        <item>Sargodha</item>
+        <item>Sheikhupura</item>
+        <item>Shikarpur</item>
+        <item>Swabi</item>
+        <item>Swat</item>
+        <item>Vehari</item>
+        <item>Wazirabad</item>
+
+    </array>
+
+
+    <array name="educationaldisountlist">
+        <item> All </item>
+        <item> Business &amp; finance </item>
+        <item> Personal development </item>
+        <item> IT &amp; software </item>
+        <item> Health &amp; fitness </item>
+        <item> Office productivity </item>
+        <item> Design &amp; tools </item>
+        <item> Photography &amp; video </item>
+        <item> Teaching &amp; Academics </item>
+        <item> Lifestyle </item>
+        <item> Others </item>
+    </array>
+</resources>
