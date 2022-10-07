@@ -25,7 +25,6 @@ import com.example.muftaapplication.fragmenthomemodelclass;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class HomeFragment  {
 
     private RecyclerView recyclerview;
