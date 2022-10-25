@@ -1,5 +1,6 @@
 package com.example.muftaapplication.ui.home;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,9 +13,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 //import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,22 +25,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.muftaapplication.R;
 import com.example.muftaapplication.adapterfragmenthomeclass;
 import com.example.muftaapplication.fragmenthomemodelclass;
+import com.example.muftaapplication.ui.notifications.NotificationsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-public class HomeFragment  {
+public class HomeFragment   extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
 
     private RecyclerView recyclerview;
     private ArrayList<fragmenthomemodelclass> ModelArrayList;
 
-
     private HomeViewModel homeViewModel;
+    Spinner spinner;
+    //private NotificationsViewModel notificationsViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-       // homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+       homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        //final TextView textView = root.findViewById(R.id.text_home);
 
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override
@@ -47,33 +53,33 @@ public class HomeFragment  {
 //        });
 
 
-//        recyclerview=root.findViewById(R.id.myrecyclerview);
-//        ModelArrayList= new ArrayList<>();
-//
-//        int numberOfColumns = 2;
-//        recyclerview.setLayoutManager(new GridLayoutManager(getActivity(), numberOfColumns));
-//
-//
-//        ModelArrayList.add(new fragmenthomemodelclass("Education discounts","5034 discounts",R.drawable.educationdiscount));
-//        ModelArrayList.add(new fragmenthomemodelclass("Food discounts","1620 discounts",R.drawable.fooddiscount));
-//        ModelArrayList.add(new fragmenthomemodelclass("Lifestyle discounts","98 discounts",R.drawable.educationdiscount));
-//        ModelArrayList.add(new fragmenthomemodelclass("Clothing discounts","127 discounts",R.drawable.clothingdiscount));
-//        ModelArrayList.add(new fragmenthomemodelclass("Event discounts","20 discounts",R.drawable.eventdiscount));
-//        ModelArrayList.add(new fragmenthomemodelclass("Travelling discounts","10 discounts",R.drawable.educationdiscount));
-//
-//        adapterfragmenthomeclass home= new adapterfragmenthomeclass(getActivity(),ModelArrayList);
-//        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//        recyclerview.setLayoutManager(linearLayoutManager1);
-//        recyclerview.setAdapter(home);
+        recyclerview=root.findViewById(R.id.myrecyclerview);
+        ModelArrayList= new ArrayList<>();
+
+        int numberOfColumns = 2;
+        recyclerview.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+
+
+        ModelArrayList.add(new fragmenthomemodelclass("Education discounts","5034 discounts",R.drawable.educationdiscount));
+        ModelArrayList.add(new fragmenthomemodelclass("Food discounts","1620 discounts",R.drawable.fooddiscount));
+        ModelArrayList.add(new fragmenthomemodelclass("Lifestyle discounts","98 discounts",R.drawable.educationdiscount));
+        ModelArrayList.add(new fragmenthomemodelclass("Clothing discounts","127 discounts",R.drawable.clothingdiscount));
+        ModelArrayList.add(new fragmenthomemodelclass("Event discounts","20 discounts",R.drawable.eventdiscount));
+        ModelArrayList.add(new fragmenthomemodelclass("Travelling discounts","10 discounts",R.drawable.educationdiscount));
+
+        adapterfragmenthomeclass home= new adapterfragmenthomeclass(this,ModelArrayList);
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        recyclerview.setLayoutManager(linearLayoutManager1);
+        recyclerview.setAdapter(home);
 
 
 
 
 
 
-       // final Spinner spinner= root.findViewById(R.id.spinner);
+        final Spinner spinner= root.findViewById(R.id.spinner);
 //        // Spinner click listener
-//        spinner.setOnItemSelectedListener(this);
+        spinner.setOnItemSelectedListener(this);
 //
 //        // Spinner Drop down elements
 //        List<String> categories = new ArrayList<String>();
@@ -87,16 +93,16 @@ public class HomeFragment  {
 //
 //
 //        // Creating adapter for spinner
-//        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(getActivity(),
-//                R.array.cityspinner,
-//                android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
+                R.array.cityspinner,
+                android.R.layout.simple_spinner_item);
 ////
 ////        // Drop down layout style - list view with radio button
-//          adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+          adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 ////
 ////        // attaching data adapter to spinner
-//          spinner.setAdapter(adapter);
-//          spinner.setOnItemSelectedListener(this);
+          spinner.setAdapter(adapter);
+          spinner.setOnItemSelectedListener(this);
 
 
 
@@ -106,16 +112,18 @@ public class HomeFragment  {
         return root;
     }
 
-//    @Override
-//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//        // On selecting a spinner item
-//        String text =parent.getItemAtPosition(position).toString();
-//        // Showing selected spinner item
-//        Toast.makeText(parent.getContext(), "Selected: "+ text, Toast.LENGTH_SHORT).show();
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//
-//    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String text =parent.getItemAtPosition(position).toString();
+        // Showing selected spinner item
+        Toast.makeText(parent.getContext(), "Selected: "+ text, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 }
