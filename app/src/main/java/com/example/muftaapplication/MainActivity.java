@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
          //*** Fragment home kay liyay yeh wala recyclerview ***//
 
 //        recyclerview=findViewById(R.id.myrecyclerview);
