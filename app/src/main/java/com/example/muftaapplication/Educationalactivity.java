@@ -32,8 +32,8 @@ public class Educationalactivity extends AppCompatActivity implements AdapterVie
     private List<educationactivitymodelclass> educationList;
     private educationactivityadapterclass educationadapter;
     ImageView backbtn;
-
     Spinner spinner;
+
 
     Query query1;
    // Query query2;
@@ -43,9 +43,10 @@ public class Educationalactivity extends AppCompatActivity implements AdapterVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_educationalactivity);
+        getSupportActionBar().hide();
         backbtn=findViewById(R.id.backbtn);
 
-        recyclerview = findViewById(R.id.myrecyclerview);
+        recyclerview = findViewById(R.id.educationrecyclerview);
         educationList = new ArrayList<>();
 
 

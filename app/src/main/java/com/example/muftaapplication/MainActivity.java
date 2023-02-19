@@ -8,6 +8,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.muftaapplication.ui.home.HomeViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 //    private RecyclerView recyclerview;
 //    private ArrayList<fragmenthomemodelclass> ModelArrayList;
 //
-//    private HomeViewModel homeViewModel;
+   private HomeViewModel homeViewModel;
 //    Spinner spinner;
 
     @Override

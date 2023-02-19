@@ -33,7 +33,7 @@ public class Clothingactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothingactivity);
-
+        getSupportActionBar().hide();
 
         backbtn=findViewById(R.id.backbtn);
         recyclerview = findViewById(R.id.clothingrecyclerview);

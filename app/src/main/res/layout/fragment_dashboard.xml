@@ -13,11 +13,11 @@
       android:text="Hello Dear"
       android:textColor="@color/black"
       android:textStyle="bold"
-      android:textSize="40dp"/>
+      android:textSize="30sp"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/paleorange"
         app:cardCornerRadius="15dp"
         android:layout_marginRight="10dp"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="All the best Discounts are here!"
-            android:textSize="45dp"
+            android:textSize="30dp"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginTop="20dp"
@@ -84,11 +84,12 @@
         android:layout_height="wrap_content"
         android:text="Popular Discounts"
         android:textStyle="bold"
-        android:textSize="40dp"
+        android:textSize="30sp"
         android:textColor="@color/black"/>
 
 
 <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/dashboarddiscount"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginRight="10dp"

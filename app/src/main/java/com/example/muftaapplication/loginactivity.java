@@ -55,7 +55,7 @@ public class loginactivity extends AppCompatActivity {
         btngoogle = findViewById(R.id.google);
         skip=findViewById(R.id.skip);
 
-
+        mAuth = FirebaseAuth.getInstance();
 
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,7 +66,7 @@ public class loginactivity extends AppCompatActivity {
         });
 
 
-        mAuth = FirebaseAuth.getInstance();
+
         btnsigin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -29,14 +29,16 @@ import com.example.muftaapplication.ui.notifications.NotificationsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-public class HomeFragment   extends AppCompatActivity implements AdapterView.OnItemSelectedListener  {
+public class HomeFragment   extends Fragment implements AdapterView.OnItemSelectedListener  {
 
     private RecyclerView recyclerview;
     private ArrayList<fragmenthomemodelclass> ModelArrayList;
 
+
+
     private HomeViewModel homeViewModel;
     Spinner spinner;
-    //private NotificationsViewModel notificationsViewModel;
+    private NotificationsViewModel notificationsViewModel;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,7 +59,7 @@ public class HomeFragment   extends AppCompatActivity implements AdapterView.OnI
         ModelArrayList= new ArrayList<>();
 
         int numberOfColumns = 2;
-        recyclerview.setLayoutManager(new GridLayoutManager(this, numberOfColumns));
+        recyclerview.setLayoutManager(new GridLayoutManager(getActivity(), numberOfColumns));
 
 
         ModelArrayList.add(new fragmenthomemodelclass("Education discounts","5034 discounts",R.drawable.educationdiscount));
@@ -67,9 +69,9 @@ public class HomeFragment   extends AppCompatActivity implements AdapterView.OnI
         ModelArrayList.add(new fragmenthomemodelclass("Event discounts","20 discounts",R.drawable.eventdiscount));
         ModelArrayList.add(new fragmenthomemodelclass("Travelling discounts","10 discounts",R.drawable.educationdiscount));
 
-        adapterfragmenthomeclass home= new adapterfragmenthomeclass(this,ModelArrayList);
-        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerview.setLayoutManager(linearLayoutManager1);
+        adapterfragmenthomeclass home= new adapterfragmenthomeclass(getActivity(),ModelArrayList);
+      // LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+       // recyclerview.setLayoutManager(linearLayoutManager1);
         recyclerview.setAdapter(home);
 
 
@@ -78,6 +80,7 @@ public class HomeFragment   extends AppCompatActivity implements AdapterView.OnI
 
 
         final Spinner spinner= root.findViewById(R.id.spinner);
+
 //        // Spinner click listener
         spinner.setOnItemSelectedListener(this);
 //
@@ -90,17 +93,22 @@ public class HomeFragment   extends AppCompatActivity implements AdapterView.OnI
 //        categories.add("Item 5");;
 
 //        categories.add("Item 6");
-//
-//
-//        // Creating adapter for spinner
-        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(this,
+
+
+       // Creating adapter for spinner
+        ArrayAdapter<CharSequence> adapter =  ArrayAdapter.createFromResource(getActivity(),
                 R.array.cityspinner,
                 android.R.layout.simple_spinner_item);
-////
-////        // Drop down layout style - list view with radio button
+
+
+
+
+
+        // Drop down layout style - list view with radio button
           adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-////
-////        // attaching data adapter to spinner
+
+
+        // attaching data adapter to spinner
           spinner.setAdapter(adapter);
           spinner.setOnItemSelectedListener(this);
 

@@ -32,7 +32,7 @@ public class Lifestyleactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lifestyleactivity);
-
+        getSupportActionBar().hide();
 
         backbtn=findViewById(R.id.backbtn);
         recyclerview = findViewById(R.id.lifestylerecyclerview);

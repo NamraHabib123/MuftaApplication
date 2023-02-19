@@ -33,7 +33,7 @@ public class Travellingactivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travellingactivity);
-
+        getSupportActionBar().hide();
 
         backbtn=findViewById(R.id.backbtn);
         recyclerview = findViewById(R.id.travellingrecyclerview);
